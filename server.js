@@ -16,10 +16,17 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const mongodbURI = process.env.MONGO_URI;
 
-mongoose.connect(mongodbURI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose
+  .connect(mongodbURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("Database connection has been establish, Cheers!");
+  })
+  .catch((err) => {
+    console.error(err);
+  });
 
 // Testing the initial route /root route
 app.get("/", (req, res) => {
