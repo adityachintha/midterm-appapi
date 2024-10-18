@@ -26,3 +26,6 @@ exports.importUsers = async (req, res) => {
     res.status(500).send("Error importing data");
   }
 };
+
+//Function to retreive all Users
+exports.getAllUsers = async (req, res) => {};
