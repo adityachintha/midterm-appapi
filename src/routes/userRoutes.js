@@ -17,4 +17,7 @@ router.get("/", controller.getAllUsers);
 // Get route to find user by ID
 router.get("/:id", controller.getUserById);
 
+//Get route to find the user by Location
+router.get("/location", controller.getUserByLocation);
+
 module.exports = router; //exporting router
