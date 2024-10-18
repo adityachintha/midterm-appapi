@@ -15,6 +15,9 @@ const cors = require("cors");
 // Initialize the express app
 const app = express();
 
+// Using CORS middleware to handle cross-origin requests
+app.use(cors());
+
 // Setting the Port and Mongo DB Connection
 const PORT = process.env.PORT || 3000;
 const mongodbURI = process.env.MONGO_URI;
