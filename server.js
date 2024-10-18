@@ -20,3 +20,8 @@ const mongodbURI = process.env.MONGO_URI;
 app.get("/", (req, res) => {
   res.send("Welcome to the Midterm App");
 });
+
+//Starting the server
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
