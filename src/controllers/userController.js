@@ -45,4 +45,6 @@ exports.getAllUsers = async (req, res) => {
   }
 };
 
-exports.getUserById = async (req, res) => {};
+exports.getUserById = async (req, res) => {
+  const userID = req.params.id;
+};
