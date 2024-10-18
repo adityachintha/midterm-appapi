@@ -12,6 +12,10 @@ dotenv.config({ path: "./config.env" });
 // Initialize the express app
 const app = express();
 
+// Setting the Port and Mongo DB Connection
+const PORT = process.env.PORT || 3000;
+const mongodbURI = process.env.MONGO_URI;
+
 // Testing the initial route /root route
 app.get("/", (req, res) => {
   res.send("Welcome to the Midterm App");
