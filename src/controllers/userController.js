@@ -44,3 +44,5 @@ exports.getAllUsers = async (req, res) => {
       .json({ message: "error orccured during users retriving", error });
   }
 };
+
+exports.getUserById = async (req, res) => {};
