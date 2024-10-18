@@ -48,7 +48,7 @@ exports.getAllUsers = async (req, res) => {
 exports.getUserById = async (req, res) => {
   const userID = req.params.id;
   try {
-    const user = await User.findById(userID); // Finding the user by _id in the collections
+    const user = await User.findOne({ userId: userID }); //Finding the custom userID
     if (!user) {
       return res.status(404).send("User information is not available");
     } else {
