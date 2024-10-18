@@ -8,6 +8,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 dotenv.config({ path: "./config.env" });
+const userRoutes = require("./src/routes/userRoutes");
+const fs = require("fs");
 
 // Initialize the express app
 const app = express();
