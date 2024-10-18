@@ -47,4 +47,16 @@ exports.getAllUsers = async (req, res) => {
 
 exports.getUserById = async (req, res) => {
   const userID = req.params.id;
+  try {
+    const user = await User.findById(userID); // Finding the user by _id in the collections
+    if (!user) {
+      return res.status(404).send("User information is not available");
+    } else {
+      res.status(200).json(user);
+      console.log("user information retrieved");
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Error retrieving the user information");
+  }
 };
