@@ -20,7 +20,7 @@ exports.importUsers = async (req, res) => {
       console.log("Data already exits");
       res.status(200).send("Data already exits");
     }
-  } catch (e) {}
-  console.error("Error importing data", e);
+  } catch (err) {}
+  console.error("Error importing data", err);
   res.status(500).send("Error importing data");
 };
