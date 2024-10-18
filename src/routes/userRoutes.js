@@ -14,4 +14,7 @@ router.post("/import", controller.importUsers);
 // Get Route to retrive users
 router.get("/", controller.getAllUsers);
 
+// Get route to find user by ID
+router.get("/:id", controller.getUserById);
+
 module.exports = router; //exporting router
