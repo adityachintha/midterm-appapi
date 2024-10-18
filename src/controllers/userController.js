@@ -61,4 +61,19 @@ exports.getUserById = async (req, res) => {
   }
 };
 
-exports.getUserByLocation = async (req, res) => {};
+exports.getUserByLocation = async (req, res) => {
+  const locationSearch = req.params.location;
+  try {
+    const locationUsers = await User.find({
+      "userData.location": locationSearch,
+    });
+    if (locationUsers.length > 0) {
+      res.status(200).json(locationUsers);
+    } else {
+      res.status(404).json({ message: "No users with location information" });
+    }
+  } catch (error) {
+    console.log("error", error);
+    res.status(500).send("Error fetching user information");
+  }
+};
