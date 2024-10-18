@@ -60,3 +60,5 @@ exports.getUserById = async (req, res) => {
     res.status(500).send("Error retrieving the user information");
   }
 };
+
+exports.getUserByLocation = async (req, res) => {};
