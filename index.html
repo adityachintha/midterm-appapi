@@ -36,6 +36,11 @@
         resultsElement.textContent = JSON.stringify(data, null, 2);
       }
 
+      //Function to show error messages
+      function showError(message) {
+        resultsElement.textContent = `Error: ${message}`;
+      }
+
       //Function to make Fetch Requests
       async function fetchData(url) {
         try {
