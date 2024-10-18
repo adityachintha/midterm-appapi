@@ -28,4 +28,19 @@ exports.importUsers = async (req, res) => {
 };
 
 //Function to retreive all Users
-exports.getAllUsers = async (req, res) => {};
+exports.getAllUsers = async (req, res) => {
+  try {
+    const users = await User.find(); //Finding the users.
+    if (users) {
+      res.status(200).send(users);
+      console.log("users retrived successfully");
+    } else {
+      res.status(404).json({ error: "Error retriving users" });
+    }
+  } catch (error) {
+    console.log("error:", error);
+    res
+      .status(500)
+      .json({ message: "error orccured during users retriving", error });
+  }
+};
