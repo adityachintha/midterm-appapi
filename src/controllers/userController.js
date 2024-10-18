@@ -4,6 +4,7 @@
 // Student ID - 200595829
 
 // Importing
+const { error } = require("console");
 const User = require("../models/userModel");
 const fs = require("fs");
 
@@ -20,7 +21,8 @@ exports.importUsers = async (req, res) => {
       console.log("Data already exits");
       res.status(200).send("Data already exits");
     }
-  } catch (err) {}
-  console.error("Error importing data", err);
-  res.status(500).send("Error importing data");
+  } catch (error) {
+    console.error("Error importing data", error);
+    res.status(500).send("Error importing data");
+  }
 };
