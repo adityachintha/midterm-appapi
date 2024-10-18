@@ -75,7 +75,14 @@
       // Event listener for "Get Users By Location" button
       document
         .getElementById("getUsersByLocation")
-        .addEventListener("click", () => {});
+        .addEventListener("click", () => {
+          const location = prompt("Enter User location:");
+          if (location) {
+            fetchData(`${baseURL}/location/${location}`);
+          } else {
+            showError("Location is required.");
+          }
+        });
     </script>
   </body>
 </html>
