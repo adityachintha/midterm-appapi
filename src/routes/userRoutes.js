@@ -10,3 +10,5 @@ const controller = require("../controllers/userController");
 
 // Post Route to Import Users
 router.post("/import", controller.importUsers);
+
+module.exports = router; //exporting router
