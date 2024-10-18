@@ -31,7 +31,17 @@
       const baseURL = "http://localhost:3000/users";
 
       //Function to make Fetch Requests
-      async function fetchData(url) {}
+      async function fetchData(url) {
+        try {
+          const response = await fetch(url);
+          if (!response.ok) {
+            throw new Error(
+              `Error: ${response.statusText} (${response.status})`
+            );
+          }
+          const data = await response.json();
+        } catch (error) {}
+      }
     </script>
   </body>
 </html>
