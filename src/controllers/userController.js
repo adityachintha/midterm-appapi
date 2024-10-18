@@ -62,7 +62,7 @@ exports.getUserById = async (req, res) => {
 };
 
 exports.getUserByLocation = async (req, res) => {
-  const locationSearch = req.params.location;
+  const locationSearch = new RegExp(req.params.location, "i"); // Case insensitive search
   try {
     const locationUsers = await User.find({
       "userData.location": locationSearch,
