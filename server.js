@@ -10,6 +10,7 @@ const dotenv = require("dotenv");
 dotenv.config({ path: "./config.env" });
 const userRoutes = require("./src/routes/userRoutes");
 const fs = require("fs");
+const cors = require("cors");
 
 // Initialize the express app
 const app = express();
