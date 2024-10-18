@@ -11,4 +11,7 @@ const controller = require("../controllers/userController");
 // Post Route to Import Users
 router.post("/import", controller.importUsers);
 
+// Get Route to retrive users
+router.get("/", controller.getAllUsers);
+
 module.exports = router; //exporting router
