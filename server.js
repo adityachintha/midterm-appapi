@@ -16,6 +16,11 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const mongodbURI = process.env.MONGO_URI;
 
+mongoose.connect(mongodbURI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
 // Testing the initial route /root route
 app.get("/", (req, res) => {
   res.send("Welcome to the Midterm App");
