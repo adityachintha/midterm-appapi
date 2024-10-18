@@ -28,6 +28,9 @@ mongoose
     console.error(err);
   });
 
+//JSON Parsing
+app.use(express.json());
+
 // Testing the initial route /root route
 app.get("/", (req, res) => {
   res.send("Welcome to the Midterm App");
