@@ -17,3 +17,6 @@ const UserSchema = new Schema({
     email: { type: String },
   },
 });
+
+const User = mongoose.model("UserMidterm", UserSchema);
+module.exports = User;
