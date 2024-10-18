@@ -6,3 +6,14 @@
 //Importing
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+
+//Creating the Schema
+const UserSchema = new Schema({
+  userId: { type: Number },
+  userData: {
+    name: { type: String },
+    age: { type: Number },
+    location: { type: String },
+    email: { type: String },
+  },
+});
