@@ -65,6 +65,11 @@
       // Event listener for "Get User By ID" button
       document.getElementById("getUserById").addEventListener("click", () => {
         const userId = prompt("Enter the user ID to fetch user Information:");
+        if (userId) {
+          fetchData(`${baseURL}/${userId}`);
+        } else {
+          showError("User ID is required");
+        }
       });
     </script>
   </body>
