@@ -38,6 +38,9 @@ app.get("/", (req, res) => {
   res.send("Welcome to the Midterm App");
 });
 
+//Route for Users
+app.use("/users", userRoutes);
+
 //Starting the server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
