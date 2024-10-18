@@ -9,3 +9,8 @@ const mongoose = require("mongoose");
 
 // Initialize the express app
 const app = express();
+
+// Testing the initial route /root route
+app.get("/", (req, res) => {
+  res.send("Welcome to the Midterm App");
+});
