@@ -51,7 +51,10 @@
             );
           }
           const data = await response.json();
-        } catch (error) {}
+          showResult(data);
+        } catch (error) {
+          showError(error.message);
+        }
       }
     </script>
   </body>
