@@ -56,6 +56,11 @@
           showError(error.message);
         }
       }
+
+      // Event listener for "Get All Users" button action
+      document.getElementById("getAllUsers").addEventListener("click", () => {
+        fetchData(baseURL);
+      });
     </script>
   </body>
 </html>
