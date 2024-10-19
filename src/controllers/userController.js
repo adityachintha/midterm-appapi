@@ -14,7 +14,7 @@ exports.importUsers = async (req, res) => {
     const data = JSON.parse(fs.readFileSync("./users.json", "utf-8"));
     const count = await User.countDocuments();
     if (count === 0) {
-      await User.create(data);
+      await User.create(data); // creating the users
       console.log("Data imported to MongoDB successfully ");
       res.status(200).send("Data imported successfully ");
     } else {
@@ -45,6 +45,7 @@ exports.getAllUsers = async (req, res) => {
   }
 };
 
+//Function to get users by custom Id and not the Mongo db ID
 exports.getUserById = async (req, res) => {
   const userID = req.params.id;
   try {
@@ -61,6 +62,7 @@ exports.getUserById = async (req, res) => {
   }
 };
 
+//Function to get users by location
 exports.getUserByLocation = async (req, res) => {
   const locationSearch = new RegExp(req.params.location, "i"); // Case insensitive search
   try {
